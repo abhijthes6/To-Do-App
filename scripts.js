@@ -68,6 +68,12 @@ const stats = () =>
     document.getElementById("totalTasks").innerHTML = "Total tasks:" + totalTasks;
     document.getElementById("completedTasks").innerHTML = "Tasks completed:" + completedTasks;
     let percent = (completedTasks / totalTasks) * 100;
+    percent = Math.round(percent);
     document.getElementById("progress-bar").style.width = percent + "%";
+    if(percent === 100){  
+        document.getElementById("progress-bar").style.backgroundColor = "#67AE6E";
+    }else{
+        document.getElementById("progress-bar").style.backgroundColor = "#5CA9E9";
+    }
 }
 stats();

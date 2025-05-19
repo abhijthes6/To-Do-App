@@ -55,9 +55,7 @@ body {
     overflow: scroll;
     scrollbar-width: none;
 }
-.list {
 
-}
 
 #add {
     height: 40px;
@@ -143,43 +141,56 @@ ul li.checked::before {
 
 }
 
-#progress-bar{
+#progress-bar {
     width: 0%;
     height: 20px;
     margin-top: 10px;
     background-color: #5CA9E9;
     justify-content: flex-end;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
+
+
 
 @media (max-width: 950px) {
     .box {
         width: 60vw;
     }
+
     #task {
         width: 95%;
     }
+
     #add {
         width: 60px;
     }
 }
+
 @media (max-width: 710px) {
     .box {
         width: 70vw;
     }
+
     #task {
         width: 95%;
     }
+
     #add {
         width: 60px;
     }
 }
+
 @media (max-width: 450px) {
     .box {
         width: 90vw;
     }
+
     #task {
         width: 95%;
     }
+
     #add {
         width: 60px;
     }
