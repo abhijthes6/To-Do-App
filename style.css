@@ -144,7 +144,7 @@ ul li.checked::before {
 }
 
 #progress-bar{
-    width: 90%;
+    width: 0%;
     height: 20px;
     margin-top: 10px;
     background-color: #5CA9E9;
