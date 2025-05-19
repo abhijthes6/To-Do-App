@@ -27,6 +27,7 @@ clearButton.onclick = () => {
     localStorage.clear();
     n = 0;
     taskList.innerHTML = "";
+    stats();
 }
 
 
@@ -54,6 +55,12 @@ stats();
 
 const stats = () =>
 {
+    if(localStorage.length === 0){
+        document.getElementById("totalTasks").innerHTML = "Total tasks: 0";
+        document.getElementById("completedTasks").innerHTML = "Tasks completed: 0";
+        document.getElementById("progress-bar").style.width = "0%";
+        return;
+    }
     const tasks = document.getElementsByClassName("task");
     const checkedTasks = document.getElementsByClassName("checked");
     let totalTasks = tasks.length;
