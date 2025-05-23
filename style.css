@@ -199,6 +199,10 @@ ul li.checked::before {
     transition: all 0.3s ease;
 
 }
+
+.darkMode .round {
+    background-image: url("https://img.icons8.com/?size=160&id=q4yXFoEnYRH7&format=png");
+}
 .dark {
     justify-content: left;
 
