@@ -2,6 +2,8 @@ const input = document.querySelector("#task");
 const addButton = document.querySelector("#add");
 const taskList = document.querySelector("#taskList");
 const clearButton = document.querySelector("#clear");
+const toggleB = document.querySelector(".changeMode");
+const mode = document.querySelector(".container");
 
 let n = localStorage.length;
 
@@ -39,6 +41,13 @@ const loadTasks = () => {
     taskList.innerHTML = localStorage.getItem("data");
     console.log(localStorage.getItem("data"));
     console.log(taskList.innerHTML);
+    if(localStorage.getItem("mode") === "dark"){
+        toggleB.classList.add("dark");
+        mode.classList.add("darkMode");
+    }else{
+        toggleB.classList.remove("dark");
+        mode.classList.remove("darkMode");
+    }
 }
 loadTasks();
 
@@ -80,13 +89,12 @@ const stats = () =>
 stats();
 
 // dark mode
-const toggleB = document.querySelector(".changeMode");
-const mode = document.querySelector(".container");
+
 
 toggleB.onclick = () => {   
     toggleB.classList.toggle("dark");
     mode.classList.toggle("darkMode");
-    if(document.body.classList.contains("dark")){
+    if(mode.classList.contains("darkMode")){
         localStorage.setItem("mode", "dark");
     }else{
         localStorage.setItem("mode", "light");
