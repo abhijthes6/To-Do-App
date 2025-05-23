@@ -72,8 +72,23 @@ const stats = () =>
     document.getElementById("progress-bar").style.width = percent + "%";
     if(percent === 100){  
         document.getElementById("progress-bar").style.backgroundColor = "#67AE6E";
+        confetti();
     }else{
         document.getElementById("progress-bar").style.backgroundColor = "#5CA9E9";
     }
 }
 stats();
+
+// dark mode
+const toggleB = document.querySelector(".changeMode");
+const mode = document.querySelector(".container");
+
+toggleB.onclick = () => {   
+    toggleB.classList.toggle("dark");
+    mode.classList.toggle("darkMode");
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
+}

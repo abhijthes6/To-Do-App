@@ -11,6 +11,25 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    transition: 0.3s ease, color 0.3s ease;
+
+}
+
+:root {
+    --main-color: #5CA9E9;
+    --secondary-color: #E4F3E3;
+    --box-gradient: linear-gradient(to right, #e4f3e37a, #dfeaf2);
+    --text-colour: #333;
+    --task-colour: #fff;    
+    --form-colour: #fff;
+}
+.darkMode {
+    --main-color: #333;
+    --secondary-color: #555;
+    --box-gradient: linear-gradient(to right, #444, #666);
+    --text-colour: white;
+    --task-colour: #aaaaaa;    
+    --form-colour: #444;
 }
 
 .container {
@@ -20,13 +39,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #E4F3E3, #5CA9E9);
+    background: linear-gradient(to right, var(--secondary-color), var(--main-color));
 }
 
 .box {
     width: 40vw;
     height: 550px;
-    background: linear-gradient(to right, #e4f3e37a, #dfeaf2);
+    background: var(--box-gradient);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -43,6 +62,7 @@ body {
     border-radius: 20px;
     padding: 20px;
     position: relative;
+    background-color: var(--form-colour);
 }
 
 #task:focus {
@@ -62,11 +82,11 @@ body {
     width: 100px;
     border: none;
     border-radius: 20px;
-    background-color: #5CA9E9;
+    background-color: var(--main-color);
     padding: 15px;
     position: absolute;
     right: 0px;
-    color: white;
+    color: var(--text-colour);
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
@@ -83,7 +103,7 @@ body {
 }
 
 li {
-    background-color: #fff;
+    background-color: var(--task-colour);
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
@@ -107,7 +127,7 @@ li::before {
 li button {
     background-color: #ff4d4d;
     border: none;
-    color: white;
+    color: var(--text-colour);
     padding: 5px 10px;
     border-radius: 20px;
     cursor: pointer;
@@ -120,7 +140,7 @@ ul li.checked::before {
 #clear {
     background-color: #ff4d4d;
     border: none;
-    color: white;
+    color: var(--text-colour);
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
@@ -134,7 +154,7 @@ ul li.checked::before {
     font-weight: 600;
     width: 40vw;
     margin-top: 20px;
-    color: #333;
+    color: var(--text-colour);
     display: flex;
     flex-direction: column;
     line-height: 0;
@@ -145,11 +165,50 @@ ul li.checked::before {
     width: 0%;
     height: 20px;
     margin-top: 10px;
-    background-color: #5CA9E9;
+    background-color: var(--main-color);
     justify-content: flex-end;
     display: flex;
     justify-content: right;
     align-items: center;
+}
+
+/* change colour Mode */
+.changeMode {
+    width: 55px;
+    height: 30px;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--text-colour);
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.round{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://img.icons8.com/?size=100&id=45475&format=png");
+    background-size: cover;
+    transition: all 0.3s ease;
+
+}
+.dark {
+    justify-content: left;
+
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 
