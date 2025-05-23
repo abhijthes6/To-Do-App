@@ -12,7 +12,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     transition: 0.3s ease, color 0.3s ease;
+}
 
+body, .container, .box, #task, #add, li, button, #clear, .progress, #progress-bar, .changeMode, .round, .darkMode, .heading, .dark {
+    transition: 0.3s ease;
 }
 
 :root {
